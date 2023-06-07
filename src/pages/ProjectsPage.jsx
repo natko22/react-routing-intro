@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ProjectsPage(props) {
   const [projects, setProjects] = useState([]);
@@ -14,8 +15,11 @@ function ProjectsPage(props) {
       <h2>Projects</h2>
       {projects.map((project) => {
         return (
-          <div key={project.id} className="project">
-            <h3>{project.name}</h3>
+          <div key={project._id} className="project">
+            <h3>
+              {" "}
+              <Link to={`/projects/${project._id}`}>{project.name}</Link>
+            </h3>
             <p>{project.technologies}</p>
           </div>
         );

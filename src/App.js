@@ -8,8 +8,9 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ErrorPage from "./pages/ErrorPage";
 import HomePageWithNavigate from "./pages/HomePageWithNavigate";
 import projectsData from "./projects-data.json";
-
+import QueryStringExample from "./pages/QueryStringExample";
 import { Routes, Route } from "react-router-dom";
+import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           path="/projects"
           element={<ProjectsPage projects={projectsData} />}
         />
+        <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+        <Route path="/example" element={<QueryStringExample />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
